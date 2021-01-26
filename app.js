@@ -124,5 +124,5 @@ function checkLS() {
  }
 
 form.addEventListener('submit', carsData);
-Header()
+header()
 checkLS();
