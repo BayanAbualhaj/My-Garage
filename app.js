@@ -9,6 +9,8 @@ var form = document.getElementById('form');
 
 var arrayOfcars=[];
 
+var arrayOfheders=['Logo','Details'];
+
 
 //////////////////////////////////
 ///Functions && event listener////
@@ -68,7 +70,7 @@ function carsData(event) {
     var category = event.target.category.value;
     var year = event.target.year.value;
 
-    var newCar= new Cars (name,category,year);
+    var newCar= new Cars(name,category,year);
 
     newCar.renderCar();
 
@@ -110,5 +112,17 @@ function checkLS() {
 
 
 
+ function header() {
+     var tableRow=document.createElement('tr');
+     for (let index = 0; index < arrayOfheders.length; index++) {
+         var tableheader=document.createElement('th');
+         tableheader.textContent=arrayOfheders[index];
+         tableRow.appendChild(tableheader);
+     }
+     table.appendChild(tableRow);
+     
+ }
+
 form.addEventListener('submit', carsData);
+Header()
 checkLS();
