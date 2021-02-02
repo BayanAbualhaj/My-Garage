@@ -17,7 +17,7 @@ var arrayOfheders=['Logo','Details'];
 //////////////////////////////////
 
 function Cars(name,category,year) {
-    this.img=`img/${category.toLowerCase()}.png`
+    this.img=`img/${category}.png`
     console.log(this.img);
     this.name=name;
     this.category=category;
@@ -33,7 +33,7 @@ Cars.prototype.renderCar =function() {
 
     var carDataimg=document.createElement('td');
     var carLogo=document.createElement('img');
-    carLogo.src=this.img;
+    carLogo.setAttribute('src',this.img);
     carDataimg.appendChild(carLogo);
     tableRow.appendChild(carDataimg);
 
@@ -53,11 +53,12 @@ Cars.prototype.renderCar =function() {
 }
 
 function deleteRow(event) {
+    // event.target.parentElement.remove();
     event.target.parentElement.remove();
-    var car=event.target.parentElement.innerHTML.splice('<td>',2);
+    var car=event.target.parentElement.innerHTML.split('<td>',2);
     car=car[1].replace('</td>','');
-    for (let index = 0; index < array.length; index++) {
-        if(car==arrayOfcars[index].img);
+    for (let index = 0; index < arrayOfcars.length; index++) {
+        if(car===arrayOfcars[index].img);
         var j=arrayOfcars.indexOf(arrayOfcars[index]);
         arrayOfcars.splice(j,1);
     }   
@@ -75,7 +76,7 @@ function carsData(event) {
     newCar.renderCar();
 
     localStorage.setItem('carList',JSON.stringify(arrayOfcars));
-
+    
 }
 
 function checkLS() {
@@ -87,7 +88,7 @@ function checkLS() {
 
             var carDataimg=document.createElement('td');
             var carLogo=document.createElement('img');
-            carLogo.src=arrayOfcars[index].img;
+            carLogo.setAttribute('src',arrayOfcars[index].img);
             carDataimg.appendChild(carLogo);
             tableRow.appendChild(carDataimg);
 
@@ -110,8 +111,6 @@ function checkLS() {
     
 }
 
-
-
  function header() {
      var tableRow=document.createElement('tr');
      for (let index = 0; index < arrayOfheders.length; index++) {
@@ -123,6 +122,7 @@ function checkLS() {
      
  }
 
-form.addEventListener('submit', carsData);
-header()
+form.addEventListener('submit',carsData);
+header();
 checkLS();
+console.log(arrayOfcars);

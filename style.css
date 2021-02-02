@@ -1,5 +1,5 @@
-* {
-font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+*{
+    font-family: cursive;
 }
 body{
     background-image: url('/img/background.jpg');
@@ -13,6 +13,7 @@ header{
     padding: 1%;
     text-align: center;
     font-size: 250%;
+    margin-left: 0%;
     margin-bottom: 50px;
 }
 
@@ -28,11 +29,13 @@ header{
     margin-left: 20px;
     text-align: center;
     font-size: 150%;
+    float: left;
 }
 
 #table-div{
     float: right;
-
+    margin-right: 30px;
+    padding:2%;
 }
 
 table{
@@ -40,6 +43,66 @@ table{
     padding: 5px;
     background-color: white;
     border:2px white solid;
+    border-radius: 15px;
+}
 
-    
+img {
+    width: 50px;
+    height: 50px;
+}
+
+button {
+    height: 30px;
+    width: 30px;
+    margin-top: 28px;
+    background-color:#4a4a4a;
+}
+
+#name , select{
+    width: 300px;
+    height: 50px;
+    background-color: black;
+    color: blanchedalmond;
+    font-size: 130%;
+    text-align: center;
+    border-radius: 15px;
+    z-index: 10;
+    border-color: blanchedalmond;
+    margin-top: 0%;
+}
+
+#submit{
+    padding: 2%;
+    margin-bottom: 10px;
+    width: 100px;
+    background-color: black;
+    color: blanchedalmond;
+    border-radius: 15px;
+    z-index: 10;
+}
+
+#submit:hover{
+    background-color: blanchedalmond;
+    color: slategrey;
+}
+
+label{
+    margin: 0%;
+    padding: 2%;
+    font-size: 130%;
+}
+
+form{
+    padding: 5%;
+}
+
+td {
+    text-align: center;
+    padding: 2%;
+    border: 2px #4a4a4a solid;
+    margin-bottom: 2%;
+}
+
+th {
+    padding:2%;
 }
